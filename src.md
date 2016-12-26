@@ -9,23 +9,25 @@ Asynchronous Methods for Deep Reinforcement Learning. [[arxiv '16]](http://arxiv
 
 ### Vanilla A3C
 
-![A3C](img/A3C.png)
+![A3C](img/A3C.png =75%x75%)
 
 ### Async baselines
 
 One-step Q
-![Async_Q](img/Async_1Q.png =649x675)
+
+![Async_Q](img/Async_1Q.png =50%x50%)
 
 N-step Q
-![Async_Q](img/Async_nQ.png)
+
+![Async_Q](img/Async_nQ.png =75%x75%)
 
 ## Actor-Critic with Experience Replay (ACER)
 
 Sample Efficient Actor-Critic with Experience Replay. [[arxiv '16]](http://arxiv.org/abs/1611.01224)
 
-![ACER_1](img/ACER_1.png)
+![ACER_1](img/ACER_1.png =50%x50%)
 
-![ACER_2](img/ACER_2.png)
+![ACER_2](img/ACER_2.png =75%x75%)
 
 # DQN family
 
@@ -42,7 +44,7 @@ The max operator in standard Q-learning and DQN uses the same values both to sel
 - Vanilla target: $R_{t+1} + \gamma \max_a Q(S_{t+1}, a; \theta)$
 - Double DQN target: $R_{t+1} + \gamma Q(S_{t+1}, argmax_a\,Q(S_{t+1}, a; \theta); \theta')$
 
-![Double_DQN](img/Double_DQN.png)
+![Double_DQN](img/Double_DQN.png =75%x75%)
 
 ## Dueling DQN
 
@@ -68,7 +70,7 @@ $$ P(i) = \frac{p_i^\alpha}{\sum_k p_k^\alpha} $$ where $p_i$ is the priority of
 
 Two variants of priority assignment:
 
-1. Proportional to TD error: $p_i = |\delta_i| + \epsilon$ where $\epsilon > 0$ ensures transitions with zero TD error will also be revisited.
+1. Proportional to TD error: $p_i = |\delta_i| + \epsilon$ where the positive $\epsilon$ ensures transitions with zero TD error will also be revisited.
 2. Rank-based: $p_i = \frac{1}{rank(i)}$ sorted with respect to TD error $|\delta_i|$. More robust. 
 
 Tricks must be used to efficiently compute the above two priorities (i.e. does not increase by _O(N)_).
@@ -79,7 +81,7 @@ $$ w_i = (\frac{1}{N} \frac{1}{P(i)})^{-\beta} $$
 
 and linearly anneal $\beta$ from $\beta_0$ at the beginning of training to 1. 
 
-![PER](img/prioritized_experience_replay.png)
+![PER](img/prioritized_experience_replay.png =75%x75%)
 
 ## Normalized Advantage Function (NAF)
 
@@ -97,10 +99,10 @@ $P(x)$ is a state-dependent, positive-definite square matrix where $P(x; \theta^
 
 The action that maximizes _Q_ is always $\mu(x; \theta^\mu)$.
 
-![NAF](img/NAF.png)
+![NAF](img/NAF.png =50%x50%)
 
 ## Bootstrapped DQN
 
 Deep Exploration via Bootstrapped DQN. [[arxiv '16]](http://arxiv.org/abs/1602.04621)
 
-![bootstrapped](img/Bootstrapped_DQN.png)
+![bootstrapped](img/Bootstrapped_DQN.png =75%x75%)
